@@ -1,0 +1,49 @@
+.about {
+  padding: 150px 0;
+  background-color: #282828;
+  &__title {
+    font-weight: 100;
+    text-align: center;
+    font-size: 4rem;
+    color:#fff;
+    & span {
+      font-weight: 700;
+    }
+  }
+  &__subtitle {
+    padding-top: 40px;
+    text-align: center;
+    width: 60%;
+    margin:  0 auto;
+    color: rgba(255, 255, 255, 0.628);
+  }
+  &__btn {
+    margin-top: 40px;
+    border: none;
+    padding: 20px 60px;
+    background-color: #ff0000;
+    font-size: 1.5rem;
+    color:#fff;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    transition: .3s;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  @media (max-width:1024) {
+    &__btn {
+      font-size: 1rem;
+      padding: 15px 25px;
+    }
+  }
+  @media (max-width:400px) {
+    &__title {
+      font-size: 2rem;
+    }
+    &__subtitle {
+      width: 90%;
+    }
+    
+  }
+}

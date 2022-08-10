@@ -1,0 +1,145 @@
+header {
+  background-color: rgba(0,0,0,.7);
+  top: 0;
+  position:fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 90%;
+  margin: 0 auto;
+  top: 0;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 12vh;
+  #check-bar {
+    display: none;
+  }
+  #bar {
+    display: none;
+    i {
+      color: #fff;
+      font-size: 2rem;
+    }
+  }
+
+  &__logo {
+    img {
+      width:150px;
+      height: 30px;
+    } 
+  }
+  &__nav-list {
+    display: flex;
+    justify-content:space-between;
+    width: 45%;
+    &_item {
+      font-size: 1.1rem;
+      color: #fff;
+      transition: .2s;
+      a {
+        &:hover {
+          color: #ff0000!important;
+        }  
+      }
+      &:nth-child(5) {
+        transition: .3s;
+        position: relative;
+        &:nth-child(5) > .drop-menu {
+        transition: .1s;
+        opacity: 0;
+        left: -30%;
+        top: 4vh;
+        transform: translateX(100%);
+        width:20vw;
+        height: 75vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        background-color: rgba(0,0,0,.9);
+        padding: 15% 10% 15% 30%;
+        font-size: .9rem;
+        &__item {
+          margin-top: 20px;
+          color: #fff;
+          &:hover {
+            background-color: #ff0000!important;
+          }
+        }
+        }
+        &:hover .drop-menu{
+          transform: translateX(0);
+          opacity: 1;
+        }
+      } 
+    }
+  }
+  @media (max-width:1024px) {
+    justify-content: start;
+    column-gap: 20px;
+    #bar {
+      display: block;
+    }
+    #check-bar:checked + .head__nav-list {
+      transform: translateX(0);
+    }
+    &__nav-list {
+      transition: .3s;
+      transform: translateX(100%);
+      position: fixed;
+      flex-direction: column;
+      justify-content:space-around;
+      align-items:center;
+      background-color: #000;
+      right:0;
+      top: 12vh;
+      width: 60vw;
+      height: 88vh;
+      font-size: 2.5rem;
+      text-align: center;
+      &_item {
+        width: 100%;
+        padding: 8px;
+        &:hover {
+          background-color: #ff0000;
+        }
+        a {
+          &:hover {
+            color: #000!important;
+          }
+        }
+
+
+
+        &:nth-child(5) {
+          &:nth-child(5) > .drop-menu {
+          top: 0;
+          transform: translateX(-100%);
+          width:40vw;
+          height: 50vh;
+          font-size: .7rem;
+          padding: 15% 20%;
+          &__item {
+            color: #fff;
+            &:hover {
+              background-color: #ff0000!important;
+            }
+          }
+          }
+          &:hover .drop-menu{
+
+            transform: translateX(-50%);
+            opacity: 1;
+          }
+          &:focus .drop-menu{
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
